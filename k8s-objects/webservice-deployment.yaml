@@ -21,8 +21,8 @@ spec:
             - containerPort: 8080
           imagePullPolicy: Never
           volumeMounts:
-            - mountPath: "/app/images"
-              name: images
+            - mountPath: "/usr/src/app/upload"
+              name: upload-files
           resources:
             requests:
               memory: "64Mi"
@@ -31,6 +31,6 @@ spec:
               memory: "128Mi"
               cpu: "500m"
       volumes:
-        - name: images
+        - name: upload-files
           persistentVolumeClaim:
             claimName: webservice
