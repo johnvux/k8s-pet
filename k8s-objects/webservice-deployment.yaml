@@ -20,6 +20,9 @@ spec:
           ports:
             - containerPort: 8080
           imagePullPolicy: Never
+          envFrom:
+            - configMapRef:
+                name: webservice-environment-variables
           volumeMounts:
             - mountPath: "/usr/src/app/upload"
               name: upload-files

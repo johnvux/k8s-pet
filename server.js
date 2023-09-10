@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const fileUpload = require('express-fileupload');
 
@@ -23,7 +24,7 @@ app.post('/upload', (req, res) => {
     if (!image) return res.sendStatus(400);
 
     // Move the uploaded image to our upload folder
-    image.mv(__dirname + '/upload/' + image.name);
+    image.mv(process.env.UPLOAD_FOLDER + '/' + image.name);
 
     res.sendStatus(200);
 });

@@ -1,0 +1,7 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webservice-environment-variables
+data:
+  UPLOAD_FOLDER: "/usr/src/app/upload"
